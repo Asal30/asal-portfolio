@@ -61,12 +61,29 @@ export type LeadershipWorkflowStep = {
 
 export type FeaturedProject = {
   title: string;
-  category: string;
-  summary: string;
+  positioning: string;
+  projectType: string;
+  problem: string;
+  context: string;
   role: string;
+  responsibilities: string[];
+  technicalDecisions: string[];
+  productDecisions: string[];
   technologies: string[];
   outcome: string;
-  href: string;
+  lessonsLearned: string;
+  coverImage?: {
+    src: string;
+    alt: string;
+  };
+  galleryImages: {
+    src: string;
+    alt: string;
+  }[];
+  githubUrl?: string;
+  liveUrl?: string;
+  slug: string;
+  featured: boolean;
 };
 
 export type UxPrinciple = {

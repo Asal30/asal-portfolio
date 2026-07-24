@@ -4,6 +4,7 @@ import { CinematicHero } from "@/src/components/sections/cinematic-hero";
 import { ExpandingIdentity } from "@/src/components/sections/expanding-identity";
 import { LeadershipCoordination } from "@/src/components/sections/leadership-coordination";
 import { ProfessionalJourney } from "@/src/components/sections/professional-journey";
+import { SelectedProjects } from "@/src/components/sections/selected-projects";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <ExpandingIdentity />
         <ProfessionalJourney />
         <LeadershipCoordination />
+        <SelectedProjects />
       </main>
       <SiteFooter />
     </>
