@@ -1,8 +1,8 @@
 export function SiteFooter() {
   return (
-    <footer className="w-full px-6 py-6">
-      <div className="mx-auto w-full max-w-5xl">
-        <p className="text-sm text-foreground/60">
+    <footer className="w-full py-6">
+      <div className="site-container border-t border-border pt-6">
+        <p className="text-sm text-muted">
           Portfolio foundation in progress.
         </p>
       </div>
