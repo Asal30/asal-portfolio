@@ -14,7 +14,7 @@ export const portfolioContent: PortfolioContent = {
   },
 
   hero: {
-    eyebrow: "Software Engineer • Product Thinker • Team Leader",
+    eyebrow: "Software Engineer - Product Thinker - Team Leader",
     heading: "Asal Samarasinghe",
     supportingText:
       "Building thoughtful software experiences through engineering, leadership, and product thinking.",
@@ -114,7 +114,7 @@ export const portfolioContent: PortfolioContent = {
       title: "Current career direction",
       period: "[CONTENT REQUIRED]",
       context: "Software engineering, product thinking and team coordination",
-      role: "Software Engineer · Product Thinker · Team Coordinator",
+      role: "Software Engineer - Product Thinker - Team Coordinator",
       shortDescription:
         "Continuing toward opportunities that combine software engineering, product thinking and team coordination.",
       keyResponsibilities: ["[CONTENT REQUIRED]"],
@@ -864,6 +864,8 @@ export const portfolioContent: PortfolioContent = {
     category: "Music and stage performance",
     summary:
       "Founder and manager of Thraive Band SL, performing as a drummer, percussionist and violinist while organizing rehearsals, performances and team coordination.",
+    story:
+      "Music gave Asal another kind of delivery practice: listening closely, preparing with discipline, trusting a team on stage and staying calm when the moment is live. That experience supports the way he communicates, coordinates and carries responsibility in product work.",
     highlights: [
       "Founder of Thraive Band SL",
       "Professional drummer",
@@ -871,6 +873,21 @@ export const portfolioContent: PortfolioContent = {
       "Violinist",
       "Stage performer",
     ],
+    mainImage: {
+      src: "/images/music/asal-stage-performance-01.webp",
+      alt: "Asal Samarasinghe performing on stage under concert lighting",
+    },
+    secondaryImages: [
+      {
+        src: "/images/music/asal-stage-performance-02.webp",
+        alt: "Asal Samarasinghe performing music during a live stage event",
+      },
+      {
+        src: "[CONTENT REQUIRED]",
+        alt: "[CONTENT REQUIRED]",
+      },
+    ],
+    instagramUrl: "[CONTENT REQUIRED]",
   },
 
   morphoBrand: {
@@ -879,6 +896,57 @@ export const portfolioContent: PortfolioContent = {
     slogan: "Wear Your Memories",
     summary:
       "Co-founded Morpho, a premium clothing brand inspired by childhood memories. Responsible for product planning, inventory management, operations and brand growth.",
+    story:
+      "Morpho shows Asal working as a product builder outside software: shaping a brand idea, making product decisions, planning inventory, communicating with customers and creating content around a clear emotional promise.",
+    ownershipAreas: [
+      {
+        title: "Brand development",
+        description:
+          "Shaped the brand around memory, identity and the slogan Wear Your Memories.",
+      },
+      {
+        title: "Product decisions",
+        description:
+          "Connected product direction with the brand story and visual presentation.",
+      },
+      {
+        title: "Inventory planning",
+        description:
+          "Supported planning around product availability, inventory and operations.",
+      },
+      {
+        title: "Customer communication",
+        description:
+          "Handled communication touchpoints connected to the brand and customer experience.",
+      },
+      {
+        title: "Content creation",
+        description:
+          "Created visual and written content to present the brand with consistency.",
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Explored automation opportunities for order, inventory and operational workflows.",
+      },
+    ],
+    mainImage: {
+      src: "/images/morpho/morpho-product-green-01.webp",
+      alt: "Morpho clothing product photographed against a green backdrop",
+    },
+    secondaryImages: [
+      {
+        src: "/images/morpho/morpho-product-blue-01.webp",
+        alt: "Morpho clothing product photographed against a blue backdrop",
+        caption: "Product presentation",
+      },
+      {
+        src: "[CONTENT REQUIRED]",
+        alt: "[CONTENT REQUIRED]",
+        caption: "Campaign image",
+      },
+    ],
+    instagramUrl: "https://www.instagram.com/morpho_clothing.sl/",
   },
 
   socialLinks: [

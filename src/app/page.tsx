@@ -4,6 +4,8 @@ import { CinematicHero } from "@/src/components/sections/cinematic-hero";
 import { ContactClosing } from "@/src/components/sections/contact-closing";
 import { ExpandingIdentity } from "@/src/components/sections/expanding-identity";
 import { LeadershipCoordination } from "@/src/components/sections/leadership-coordination";
+import { MusicPerformanceStory } from "@/src/components/sections/music-performance-story";
+import { MorphoBrandStory } from "@/src/components/sections/morpho-brand-story";
 import { ProfessionalJourney } from "@/src/components/sections/professional-journey";
 import { SelectedProjects } from "@/src/components/sections/selected-projects";
 import { TechnicalCapabilities } from "@/src/components/sections/technical-capabilities";
@@ -21,6 +23,8 @@ export default function Home() {
         <SelectedProjects />
         <UxProductPhilosophy />
         <TechnicalCapabilities />
+        <MusicPerformanceStory />
+        <MorphoBrandStory />
         <ContactClosing />
       </main>
       <SiteFooter />

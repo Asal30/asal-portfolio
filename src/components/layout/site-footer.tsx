@@ -2,7 +2,9 @@ import { portfolioContent } from "@/src/data/portfolio-content";
 
 const footerLinks = [
   { label: "Journey", href: "#journey" },
+  { label: "Leadership", href: "#leadership" },
   { label: "Work", href: "#work" },
+  { label: "Philosophy", href: "#philosophy" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -32,7 +34,7 @@ export function SiteFooter() {
           <p className="mt-2 text-sm text-muted">
             Designed and built by {personal.name}.
           </p>
-          <p className="mt-2 text-sm text-muted">© {year}</p>
+          <p className="mt-2 text-sm text-muted">Copyright {year}</p>
         </div>
 
         <nav

@@ -126,7 +126,17 @@ export type TechnicalCapabilityGroup = {
 export type MusicJourney = {
   category: string;
   summary: string;
+  story: string;
   highlights: string[];
+  mainImage: {
+    src: string;
+    alt: string;
+  };
+  secondaryImages: {
+    src: string;
+    alt: string;
+  }[];
+  instagramUrl: string;
 };
 
 export type MorphoBrand = {
@@ -134,6 +144,21 @@ export type MorphoBrand = {
   name: string;
   slogan: string;
   summary: string;
+  story: string;
+  ownershipAreas: {
+    title: string;
+    description: string;
+  }[];
+  mainImage: {
+    src: string;
+    alt: string;
+  };
+  secondaryImages: {
+    src: string;
+    alt: string;
+    caption: string;
+  }[];
+  instagramUrl: string;
 };
 
 export type SocialLink = {

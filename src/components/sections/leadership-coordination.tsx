@@ -1,5 +1,9 @@
 "use client";
 
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { type Transition, motion, useReducedMotion } from "motion/react";
 import { portfolioContent } from "@/src/data/portfolio-content";
 import type {
@@ -8,6 +12,8 @@ import type {
 } from "@/src/types/portfolio";
 
 const columns = ["Backlog", "Planned", "In progress", "Review", "Completed"] as const;
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const revealTransition: Transition = {
   duration: 0.6,
@@ -25,13 +31,108 @@ function getStepsForStatus(steps: LeadershipWorkflowStep[], status: string) {
   return steps.filter((step) => step.status === status);
 }
 
+function softenWorkflowItem(item: HTMLElement) {
+  gsap.to(item, {
+    opacity: 0.58,
+    y: 0,
+    borderColor: "var(--border)",
+    backgroundColor: item.hasAttribute("data-story-card")
+      ? "var(--surface-raised)"
+      : "var(--background)",
+    duration: 0.3,
+    ease: "power2.out",
+  });
+}
+
+function activateWorkflowItem(item: HTMLElement, columns: HTMLElement[]) {
+  const activeColumn = item.closest<HTMLElement>("[data-workflow-column]");
+
+  columns.forEach((column) => {
+    gsap.to(column, {
+      opacity: column === activeColumn ? 1 : 0.62,
+      duration: 0.35,
+      ease: "power2.out",
+    });
+  });
+
+  gsap.to(item, {
+    opacity: 1,
+    y: -4,
+    borderColor: "var(--accent)",
+    backgroundColor: item.hasAttribute("data-story-card")
+      ? "var(--surface)"
+      : "var(--surface-raised)",
+    duration: 0.35,
+    ease: "power3.out",
+  });
+}
+
 export function LeadershipCoordination() {
+  const sectionRef = useRef<HTMLElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const { leadershipResponsibilities, leadershipWorkflow } = portfolioContent;
+
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+
+      if (!section) {
+        return;
+      }
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+      if (reduceMotion || !isDesktop) {
+        return;
+      }
+
+      const workflowItems = gsap.utils.toArray<HTMLElement>(
+        section.querySelectorAll("[data-workflow-step], [data-story-card]"),
+      );
+      const columns = gsap.utils.toArray<HTMLElement>(
+        section.querySelectorAll("[data-workflow-column]"),
+      );
+
+      gsap.set(workflowItems, {
+        opacity: 0.5,
+        y: 14,
+      });
+
+      workflowItems.forEach((item, index) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 75%",
+          end: "bottom 45%",
+          onEnter: () => activateWorkflowItem(item, columns),
+          onEnterBack: () => activateWorkflowItem(item, columns),
+          onLeave: () => softenWorkflowItem(item),
+          onLeaveBack: () => softenWorkflowItem(item),
+        });
+
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 82%",
+            toggleActions: "play none none reverse",
+          },
+          delay: Math.min(index * 0.025, 0.18),
+        });
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <section
       id="leadership"
+      ref={sectionRef}
       className="site-container section-spacing"
       aria-labelledby="leadership-heading"
     >
@@ -66,7 +167,7 @@ export function LeadershipCoordination() {
                 }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                  {String(index + 1).padStart(2, "0")} · {step.status}
+                  {String(index + 1).padStart(2, "0")} - {step.status}
                 </p>
                 <h3 className="mt-2 text-3xl">{step.title}</h3>
                 <p className="mt-2 text-sm">{step.description}</p>
@@ -87,6 +188,7 @@ export function LeadershipCoordination() {
           <div
             className="hidden overflow-hidden border border-border bg-surface/45 md:block"
             aria-label="Delivery workflow board"
+            data-workflow-board
           >
             <div className="grid grid-cols-5 border-b border-border text-xs font-semibold uppercase tracking-[0.16em] text-muted">
               {columns.map((column) => (
@@ -97,7 +199,7 @@ export function LeadershipCoordination() {
             </div>
 
             <div className="grid grid-cols-5">
-              {columns.map((column, columnIndex) => {
+              {columns.map((column) => {
                 const cards = getResponsibilitiesForStatus(
                   leadershipResponsibilities,
                   column,
@@ -112,28 +214,10 @@ export function LeadershipCoordination() {
                   >
                     <div className="grid gap-3">
                       {steps.map((step) => (
-                        <motion.div
+                        <div
                           className="border border-border bg-background p-4"
                           data-workflow-step={step.title}
                           key={step.title}
-                          initial={
-                            shouldReduceMotion ? false : { opacity: 0, y: 16 }
-                          }
-                          whileInView={
-                            shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
-                          }
-                          whileHover={
-                            shouldReduceMotion
-                              ? undefined
-                              : { y: -3, borderColor: "var(--accent)" }
-                          }
-                          viewport={{ once: true, amount: 0.4 }}
-                          transition={{
-                            ...revealTransition,
-                            delay: shouldReduceMotion
-                              ? 0
-                              : columnIndex * 0.05,
-                          }}
                         >
                           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-accent">
                             Process
@@ -142,32 +226,14 @@ export function LeadershipCoordination() {
                           <p className="mt-2 text-sm leading-6">
                             {step.description}
                           </p>
-                        </motion.div>
+                        </div>
                       ))}
 
-                      {cards.map((card, cardIndex) => (
-                        <motion.article
+                      {cards.map((card) => (
+                        <article
                           className="group border border-border bg-surface-raised p-4"
                           data-story-card={card.title}
                           key={card.title}
-                          initial={
-                            shouldReduceMotion ? false : { opacity: 0, y: 16 }
-                          }
-                          whileInView={
-                            shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
-                          }
-                          whileHover={
-                            shouldReduceMotion
-                              ? undefined
-                              : { y: -3, borderColor: "var(--accent)" }
-                          }
-                          viewport={{ once: true, amount: 0.4 }}
-                          transition={{
-                            ...revealTransition,
-                            delay: shouldReduceMotion
-                              ? 0
-                              : columnIndex * 0.05 + cardIndex * 0.04,
-                          }}
                         >
                           <div className="flex items-center justify-between gap-3">
                             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted">
@@ -184,7 +250,7 @@ export function LeadershipCoordination() {
                           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
                             Status: {card.status}
                           </p>
-                        </motion.article>
+                        </article>
                       ))}
                     </div>
                   </div>

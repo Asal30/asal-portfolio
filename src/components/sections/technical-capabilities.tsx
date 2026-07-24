@@ -191,7 +191,6 @@ export function TechnicalCapabilities() {
         <div className="grid gap-8">
           <div
             className="grid gap-2 sm:grid-cols-2"
-            role="tablist"
             aria-label="Capability categories"
           >
             {technicalCapabilityGroups.map((group) => {
@@ -207,8 +206,7 @@ export function TechnicalCapabilities() {
                   }`}
                   id={`${panelId}-tab`}
                   type="button"
-                  role="tab"
-                  aria-selected={isActive}
+                  aria-pressed={isActive}
                   aria-controls={`${panelId}-panel`}
                   key={group.title}
                   onClick={() => setActiveTitle(group.title)}
@@ -236,7 +234,6 @@ export function TechnicalCapabilities() {
               return (
                 <div
                   id={`${panelId}-panel`}
-                  role="tabpanel"
                   aria-labelledby={`${panelId}-tab`}
                   key={group.title}
                 >

@@ -20,11 +20,9 @@ function getVerifiedList(values: string[]) {
 
 function ProjectImage({
   project,
-  priority,
   reduceMotion,
 }: {
   project: FeaturedProject;
-  priority: boolean;
   reduceMotion: boolean | null;
 }) {
   if (!project.coverImage) {
@@ -47,7 +45,6 @@ function ProjectImage({
         src={project.coverImage.src}
         alt={project.coverImage.alt}
         fill
-        priority={priority}
         sizes="(min-width: 1024px) 42vw, (min-width: 768px) 45vw, 92vw"
         className="object-cover"
       />
@@ -115,7 +112,6 @@ function ProjectPreview({
       <div className={isEven ? "md:order-1" : "md:order-2"}>
         <ProjectImage
           project={project}
-          priority={index === 0}
           reduceMotion={shouldReduceMotion}
         />
       </div>
@@ -161,7 +157,7 @@ function ProjectPreview({
               Contribution
             </dt>
             <dd className="text-sm leading-6 text-muted-foreground">
-              {getVerifiedList(project.responsibilities).slice(0, 3).join(" · ")}
+              {getVerifiedList(project.responsibilities).slice(0, 3).join(" - ")}
             </dd>
           </div>
         </dl>

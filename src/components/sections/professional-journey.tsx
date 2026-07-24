@@ -1,12 +1,126 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { JourneyItem } from "@/src/components/sections/journey-item";
 import { portfolioContent } from "@/src/data/portfolio-content";
+import type { JourneyMilestone } from "@/src/types/portfolio";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const contentRequired = "[CONTENT REQUIRED]";
+
+function hasVerifiedText(value: string) {
+  return value !== contentRequired;
+}
+
+function sanitizeMilestone(milestone: JourneyMilestone): JourneyMilestone {
+  return {
+    ...milestone,
+    period: hasVerifiedText(milestone.period) ? milestone.period : "",
+    keyResponsibilities:
+      milestone.keyResponsibilities.filter(hasVerifiedText),
+    technologies: milestone.technologies.filter(hasVerifiedText),
+  };
+}
 
 export function ProfessionalJourney() {
-  const { journeyMilestones } = portfolioContent;
+  const sectionRef = useRef<HTMLElement>(null);
+  const journeyMilestones =
+    portfolioContent.journeyMilestones.map(sanitizeMilestone);
+
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+
+      if (!section) {
+        return;
+      }
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+      if (reduceMotion || !isDesktop) {
+        return;
+      }
+
+      const journeyItems = gsap.utils.toArray<HTMLElement>(
+        section.querySelectorAll("[data-journey-item]"),
+      );
+      const progressLine = section.querySelector<HTMLElement>(
+        "[data-journey-progress]",
+      );
+
+      if (progressLine) {
+        gsap.fromTo(
+          progressLine,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 65%",
+              end: "bottom 70%",
+              scrub: true,
+            },
+          },
+        );
+      }
+
+      journeyItems.forEach((item) => {
+        const number = item.querySelector<HTMLElement>("[data-journey-number]");
+        const copy = item.querySelector<HTMLElement>("[data-journey-copy]");
+
+        gsap.set(item, { opacity: 0.42 });
+        gsap.set(copy, { y: 18 });
+        gsap.set(number, { scale: 0.92 });
+
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 72%",
+          end: "bottom 42%",
+          onEnter: () => {
+            gsap.to(item, { opacity: 1, duration: 0.35, ease: "power2.out" });
+            gsap.to(copy, { y: 0, duration: 0.45, ease: "power3.out" });
+            gsap.to(number, { scale: 1, duration: 0.45, ease: "power3.out" });
+          },
+          onEnterBack: () => {
+            gsap.to(item, { opacity: 1, duration: 0.35, ease: "power2.out" });
+            gsap.to(copy, { y: 0, duration: 0.45, ease: "power3.out" });
+            gsap.to(number, { scale: 1, duration: 0.45, ease: "power3.out" });
+          },
+          onLeave: () => {
+            gsap.to(item, { opacity: 0.55, duration: 0.3, ease: "power2.out" });
+            gsap.to(number, {
+              scale: 0.94,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(item, { opacity: 0.42, duration: 0.3, ease: "power2.out" });
+            gsap.to(copy, { y: 18, duration: 0.3, ease: "power2.out" });
+            gsap.to(number, {
+              scale: 0.92,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          },
+        });
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <section
       id="journey"
+      ref={sectionRef}
       className="site-container section-spacing"
       aria-labelledby="journey-heading"
     >
@@ -28,6 +142,11 @@ export function ProfessionalJourney() {
           <div
             className="absolute left-0 top-0 hidden h-full w-px bg-border md:block"
             aria-hidden="true"
+          />
+          <div
+            className="absolute left-0 top-0 hidden h-full w-px origin-top bg-accent md:block"
+            aria-hidden="true"
+            data-journey-progress
           />
           <div className="md:pl-10">
             {journeyMilestones.map((milestone, index) => (

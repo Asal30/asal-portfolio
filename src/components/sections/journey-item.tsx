@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { type Transition, motion, useReducedMotion } from "motion/react";
 import type { JourneyMilestone } from "@/src/types/portfolio";
 
 type JourneyItemProps = {
@@ -9,39 +6,41 @@ type JourneyItemProps = {
   index: number;
 };
 
-const itemTransition: Transition = {
-  duration: 0.65,
-  ease: [0.22, 1, 0.36, 1],
-};
+function hasVerifiedText(value: string) {
+  return value !== "[CONTENT REQUIRED]";
+}
 
 export function JourneyItem({ milestone, index }: JourneyItemProps) {
-  const shouldReduceMotion = useReducedMotion();
   const itemNumber = String(index + 1).padStart(2, "0");
+  const responsibilities = milestone.keyResponsibilities.filter(hasVerifiedText);
+  const technologies = milestone.technologies.filter(hasVerifiedText);
 
   return (
-    <motion.article
+    <article
       className="relative grid gap-6 border-t border-border py-10 md:grid-cols-[5rem_minmax(0,1fr)] md:gap-10 md:py-14"
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{
-        ...itemTransition,
-        delay: shouldReduceMotion ? 0 : Math.min(index * 0.06, 0.24),
-      }}
+      data-journey-item
     >
       <div className="flex items-start gap-4 md:block">
-        <span className="font-serif text-5xl leading-none text-accent md:text-6xl">
+        <span
+          className="font-serif text-5xl leading-none text-accent md:text-6xl"
+          data-journey-number
+        >
           {itemNumber}
         </span>
         <span className="mt-2 block h-px flex-1 bg-border md:hidden" />
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.42fr)] lg:gap-12">
+      <div
+        className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.42fr)] lg:gap-12"
+        data-journey-copy
+      >
         <div className="content-stack">
           <div className="grid gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
-              {milestone.period}
-            </p>
+            {hasVerifiedText(milestone.period) ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
+                {milestone.period}
+              </p>
+            ) : null}
             <h3 className="text-4xl tracking-normal sm:text-5xl">
               {milestone.title}
             </h3>
@@ -55,39 +54,45 @@ export function JourneyItem({ milestone, index }: JourneyItemProps) {
             {milestone.shortDescription}
           </p>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                Responsibilities
-              </p>
-              <ul className="grid gap-2">
-                {milestone.keyResponsibilities.map((responsibility) => (
-                  <li
-                    className="border-l border-border pl-4 text-sm leading-6 text-muted-foreground"
-                    key={responsibility}
-                  >
-                    {responsibility}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {responsibilities.length > 0 || technologies.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {responsibilities.length > 0 ? (
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                    Responsibilities
+                  </p>
+                  <ul className="grid gap-2">
+                    {responsibilities.map((responsibility) => (
+                      <li
+                        className="border-l border-border pl-4 text-sm leading-6 text-muted-foreground"
+                        key={responsibility}
+                      >
+                        {responsibility}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
 
-            <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                Capabilities
-              </p>
-              <ul className="flex flex-wrap gap-2">
-                {milestone.technologies.map((technology) => (
-                  <li
-                    className="border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
-                    key={technology}
-                  >
-                    {technology}
-                  </li>
-                ))}
-              </ul>
+              {technologies.length > 0 ? (
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                    Capabilities
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {technologies.map((technology) => (
+                      <li
+                        className="border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
+                        key={technology}
+                      >
+                        {technology}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
-          </div>
+          ) : null}
 
           {milestone.externalLink ? (
             <a
@@ -122,6 +127,6 @@ export function JourneyItem({ milestone, index }: JourneyItemProps) {
           </div>
         )}
       </div>
-    </motion.article>
+    </article>
   );
 }
