@@ -14,6 +14,10 @@ function hasAvailableUrl(url: string | undefined) {
   return Boolean(url && !url.includes("[CONTENT REQUIRED]"));
 }
 
+function getVerifiedList(values: string[]) {
+  return values.filter((value) => value !== "[CONTENT REQUIRED]");
+}
+
 function ProjectImage({
   project,
   priority,
@@ -157,13 +161,13 @@ function ProjectPreview({
               Contribution
             </dt>
             <dd className="text-sm leading-6 text-muted-foreground">
-              {project.responsibilities.slice(0, 3).join(" · ")}
+              {getVerifiedList(project.responsibilities).slice(0, 3).join(" · ")}
             </dd>
           </div>
         </dl>
 
         <ul className="flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
-          {project.technologies.slice(0, 6).map((technology) => (
+          {getVerifiedList(project.technologies).slice(0, 6).map((technology) => (
             <li
               className="border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
               key={technology}

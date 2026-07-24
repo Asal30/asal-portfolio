@@ -5,6 +5,7 @@ import { ExpandingIdentity } from "@/src/components/sections/expanding-identity"
 import { LeadershipCoordination } from "@/src/components/sections/leadership-coordination";
 import { ProfessionalJourney } from "@/src/components/sections/professional-journey";
 import { SelectedProjects } from "@/src/components/sections/selected-projects";
+import { UxProductPhilosophy } from "@/src/components/sections/ux-product-philosophy";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ProfessionalJourney />
         <LeadershipCoordination />
         <SelectedProjects />
+        <UxProductPhilosophy />
       </main>
       <SiteFooter />
     </>

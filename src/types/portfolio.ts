@@ -63,14 +63,18 @@ export type FeaturedProject = {
   title: string;
   positioning: string;
   projectType: string;
+  timeframe: string;
   problem: string;
   context: string;
+  constraints: string[];
   role: string;
   responsibilities: string[];
   technicalDecisions: string[];
   productDecisions: string[];
+  implementationDetails: string[];
   technologies: string[];
   outcome: string;
+  challenges: string[];
   lessonsLearned: string;
   coverImage?: {
     src: string;
@@ -88,7 +92,17 @@ export type FeaturedProject = {
 
 export type UxPrinciple = {
   title: string;
-  description: string;
+  shortExplanation: string;
+  practicalExample: string;
+  projectReference?: {
+    label: string;
+    slug: string;
+  };
+  visualDemonstration?: {
+    label: string;
+    before: string[];
+    after: string[];
+  };
 };
 
 export type TechnicalCapabilityGroup = {

@@ -218,9 +218,11 @@ export const portfolioContent: PortfolioContent = {
       positioning:
         "Enterprise SaaS feature work shaped through implementation, coordination and product-facing delivery habits.",
       projectType: "Enterprise SaaS",
+      timeframe: "Jun 2024 - Dec 2025",
       problem:
         "Build and improve product features for a Norwegian family history platform.",
       context: "Embla Software Innovation",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "Full Stack Software Engineering Intern",
       responsibilities: [
         "Developed report generation features",
@@ -239,6 +241,12 @@ export const portfolioContent: PortfolioContent = {
         "Reviewed story point estimates with the Product Owner",
         "[CONTENT REQUIRED]",
       ],
+      implementationDetails: [
+        "Implemented report generation features",
+        "Implemented greeting notification features",
+        "Implemented Global Search features",
+        "Worked across frontend, backend and database layers",
+      ],
       technologies: [
         "Angular",
         "ASP.NET Core",
@@ -249,6 +257,7 @@ export const portfolioContent: PortfolioContent = {
       ],
       outcome:
         "Released multiple product features while working across frontend, backend and database layers.",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned:
         "Learned how implementation quality, estimation, product communication and delivery visibility connect inside a professional software team.",
       coverImage: {
@@ -264,9 +273,11 @@ export const portfolioContent: PortfolioContent = {
       positioning:
         "An explainable AI project focused on making model output easier to interpret.",
       projectType: "Artificial Intelligence",
+      timeframe: "[CONTENT REQUIRED]",
       problem:
         "Support cataract assessment with prediction output and visual explanation.",
       context: "[CONTENT REQUIRED]",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "Research Developer",
       responsibilities: [
         "Built cataract assessment functionality",
@@ -282,8 +293,10 @@ export const portfolioContent: PortfolioContent = {
         "Presented visual explanations alongside model output",
         "[CONTENT REQUIRED]",
       ],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: ["Python", "PyTorch", "React", "Flask", "Grad-CAM"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "catalyst",
@@ -294,9 +307,11 @@ export const portfolioContent: PortfolioContent = {
       positioning:
         "A clothing brand shaped around memory, product planning and operations.",
       projectType: "Entrepreneurship",
+      timeframe: "[CONTENT REQUIRED]",
       problem:
         "Create and operate a premium clothing brand inspired by childhood memories.",
       context: "Morpho clothing brand",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "Co-Founder",
       responsibilities: [
         "Managed product planning",
@@ -309,6 +324,7 @@ export const portfolioContent: PortfolioContent = {
         "Built the brand around the slogan Wear Your Memories",
         "Connected product direction to childhood-memory inspiration",
       ],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: [
         "Brand Strategy",
         "Operations",
@@ -316,6 +332,7 @@ export const portfolioContent: PortfolioContent = {
         "Inventory Management",
       ],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       coverImage: {
         src: "/images/morpho/morpho-product-green-01.webp",
@@ -335,14 +352,18 @@ export const portfolioContent: PortfolioContent = {
       title: "Concurrent exam-submission system",
       positioning: "[CONTENT REQUIRED]",
       projectType: "Concurrency",
+      timeframe: "[CONTENT REQUIRED]",
       problem: "[CONTENT REQUIRED]",
       context: "[CONTENT REQUIRED]",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "[CONTENT REQUIRED]",
       responsibilities: ["[CONTENT REQUIRED]"],
       technicalDecisions: ["[CONTENT REQUIRED]"],
       productDecisions: ["[CONTENT REQUIRED]"],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: ["[CONTENT REQUIRED]"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "concurrent-exam-submission-system",
@@ -352,14 +373,18 @@ export const portfolioContent: PortfolioContent = {
       title: "Hospital patient-management simulation",
       positioning: "[CONTENT REQUIRED]",
       projectType: "Simulation",
+      timeframe: "[CONTENT REQUIRED]",
       problem: "[CONTENT REQUIRED]",
       context: "[CONTENT REQUIRED]",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "[CONTENT REQUIRED]",
       responsibilities: ["[CONTENT REQUIRED]"],
       technicalDecisions: ["[CONTENT REQUIRED]"],
       productDecisions: ["[CONTENT REQUIRED]"],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: ["[CONTENT REQUIRED]"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "hospital-patient-management-simulation",
@@ -369,14 +394,18 @@ export const portfolioContent: PortfolioContent = {
       title: "Printer-management concurrency system",
       positioning: "[CONTENT REQUIRED]",
       projectType: "Concurrency",
+      timeframe: "[CONTENT REQUIRED]",
       problem: "[CONTENT REQUIRED]",
       context: "[CONTENT REQUIRED]",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "[CONTENT REQUIRED]",
       responsibilities: ["[CONTENT REQUIRED]"],
       technicalDecisions: ["[CONTENT REQUIRED]"],
       productDecisions: ["[CONTENT REQUIRED]"],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: ["[CONTENT REQUIRED]"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "printer-management-concurrency-system",
@@ -386,14 +415,18 @@ export const portfolioContent: PortfolioContent = {
       title: "Morpho order and inventory automation",
       positioning: "[CONTENT REQUIRED]",
       projectType: "Automation",
+      timeframe: "[CONTENT REQUIRED]",
       problem: "[CONTENT REQUIRED]",
       context: "Morpho clothing brand",
+      constraints: ["[CONTENT REQUIRED]"],
       role: "[CONTENT REQUIRED]",
       responsibilities: ["[CONTENT REQUIRED]"],
       technicalDecisions: ["[CONTENT REQUIRED]"],
       productDecisions: ["[CONTENT REQUIRED]"],
+      implementationDetails: ["[CONTENT REQUIRED]"],
       technologies: ["[CONTENT REQUIRED]"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "morpho-order-inventory-automation",
@@ -404,9 +437,15 @@ export const portfolioContent: PortfolioContent = {
       positioning:
         "A personal portfolio built to present engineering, product thinking, coordination and creative work through a cinematic editorial interface.",
       projectType: "Personal portfolio",
+      timeframe: "[CONTENT REQUIRED]",
       problem:
         "Create a portfolio that feels like a case-study experience rather than a generic resume page.",
       context: "Personal portfolio",
+      constraints: [
+        "Avoid generic portfolio patterns",
+        "Keep content grounded in verified information",
+        "Respect reduced-motion preferences",
+      ],
       role: "Designer and Developer",
       responsibilities: [
         "Designed the content architecture",
@@ -423,8 +462,14 @@ export const portfolioContent: PortfolioContent = {
         "Centered evidence of engineering and coordination",
         "Structured the homepage as scroll-based storytelling",
       ],
+      implementationDetails: [
+        "Created centralized typed content",
+        "Built reusable section components",
+        "Prepared dynamic case-study routing",
+      ],
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
       outcome: "[CONTENT REQUIRED]",
+      challenges: ["[CONTENT REQUIRED]"],
       lessonsLearned: "[CONTENT REQUIRED]",
       galleryImages: [],
       slug: "portfolio-experience",
@@ -434,19 +479,39 @@ export const portfolioContent: PortfolioContent = {
 
   uxPrinciples: [
     {
-      title: "Design with Purpose",
-      description:
-        "Every interface should solve a real problem while remaining intuitive and visually balanced.",
+      title: "Clarity before complexity",
+      shortExplanation:
+        "Start by making the user's next step obvious, then add detail only where it helps the task.",
+      practicalExample: "[CONTENT REQUIRED]",
+      visualDemonstration: {
+        label: "Generic interface clarity demonstration",
+        before: [
+          "Crowded layout",
+          "Weak action emphasis",
+          "Unclear labels",
+        ],
+        after: [
+          "Clear hierarchy",
+          "Specific action labels",
+          "Improved spacing",
+        ],
+      },
     },
     {
-      title: "Engineering Meets Experience",
-      description:
-        "Great software is not only functional but also enjoyable to use.",
+      title: "Motion with purpose",
+      shortExplanation:
+        "Use motion to support orientation, feedback and flow instead of decorating every interaction.",
+      practicalExample: "[CONTENT REQUIRED]",
     },
     {
-      title: "Details Matter",
-      description:
-        "Small improvements in interaction, performance and accessibility create memorable experiences.",
+      title: "Technology serving people",
+      shortExplanation:
+        "Choose tools and implementation patterns around the human problem the product needs to solve.",
+      practicalExample: "[CONTENT REQUIRED]",
+      projectReference: {
+        label: "Portfolio experience",
+        slug: "portfolio-experience",
+      },
     },
   ],
 
