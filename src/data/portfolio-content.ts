@@ -517,54 +517,345 @@ export const portfolioContent: PortfolioContent = {
 
   technicalCapabilityGroups: [
     {
-      title: "Frontend",
+      title: "Build interfaces",
+      outcome:
+        "Create responsive, typed and accessible product interfaces across modern frontend stacks.",
       capabilities: [
-        "Angular",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "HTML5",
-        "SCSS",
+        {
+          name: "Angular",
+          category: "Build interfaces",
+          shortDescription:
+            "Build enterprise SaaS interface features with component-based frontend architecture.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "PanelsTopLeft",
+        },
+        {
+          name: "React",
+          category: "Build interfaces",
+          shortDescription:
+            "Build interactive interfaces and project experiences with reusable components.",
+          relatedProjects: [
+            {
+              label: "CataLyst",
+              slug: "catalyst",
+            },
+          ],
+          iconName: "Component",
+        },
+        {
+          name: "Next.js",
+          category: "Build interfaces",
+          shortDescription:
+            "Structure App Router pages, metadata and reusable portfolio experiences.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "Globe",
+        },
+        {
+          name: "TypeScript",
+          category: "Build interfaces",
+          shortDescription:
+            "Use typed content and component props to keep implementation maintainable.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "Braces",
+        },
+        {
+          name: "Tailwind CSS",
+          category: "Build interfaces",
+          shortDescription:
+            "Create responsive layouts and centralized visual tokens without percentage-based skill claims.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "Palette",
+        },
+        {
+          name: "HTML5",
+          category: "Build interfaces",
+          shortDescription:
+            "Use semantic structure as the foundation for accessible interface implementation.",
+          relatedProjects: [],
+          iconName: "Code2",
+        },
+        {
+          name: "SCSS",
+          category: "Build interfaces",
+          shortDescription:
+            "Work with stylesheet architecture in frontend codebases where SCSS is part of the stack.",
+          relatedProjects: [],
+          iconName: "Paintbrush",
+        },
       ],
     },
     {
-      title: "Backend",
+      title: "Build systems",
+      outcome:
+        "Connect interfaces to backend services, APIs and data persistence layers.",
       capabilities: [
-        "ASP.NET Core",
-        "Node.js",
-        "Express.js",
-        "REST APIs",
-        "Flask",
+        {
+          name: "C#",
+          category: "Build systems",
+          shortDescription:
+            "Contribute to backend implementation in ASP.NET Core service work.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Server",
+        },
+        {
+          name: "ASP.NET Core",
+          category: "Build systems",
+          shortDescription:
+            "Build and maintain backend features for enterprise SaaS applications.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "ServerCog",
+        },
+        {
+          name: "REST APIs",
+          category: "Build systems",
+          shortDescription:
+            "Work with API contracts between frontend experiences and backend services.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Cable",
+        },
+        {
+          name: "SQL Server",
+          category: "Build systems",
+          shortDescription:
+            "Use relational data persistence in full-stack application work.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Database",
+        },
+        {
+          name: "Node.js",
+          category: "Build systems",
+          shortDescription:
+            "Build server-side services where the project stack calls for Node.js.",
+          relatedProjects: [],
+          iconName: "Box",
+        },
+        {
+          name: "Express.js",
+          category: "Build systems",
+          shortDescription:
+            "Create lightweight API services in Node.js application contexts.",
+          relatedProjects: [],
+          iconName: "Route",
+        },
+        {
+          name: "Flask",
+          category: "Build systems",
+          shortDescription:
+            "Support Python-backed application flows for AI project interfaces.",
+          relatedProjects: [
+            {
+              label: "CataLyst",
+              slug: "catalyst",
+            },
+          ],
+          iconName: "FlaskConical",
+        },
       ],
     },
     {
-      title: "Databases",
+      title: "Deliver collaboratively",
+      outcome:
+        "Move work through shared delivery systems with communication, version control and task visibility.",
       capabilities: [
-        "SQL Server",
-        "MySQL",
-        "MongoDB",
-        "SQLite",
+        {
+          name: "Git",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Use version control as part of collaborative software delivery.",
+          relatedProjects: [],
+          iconName: "GitBranch",
+        },
+        {
+          name: "GitHub",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Work with repository-based collaboration and source control workflows.",
+          relatedProjects: [],
+          iconName: "GitFork",
+        },
+        {
+          name: "Bitbucket",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Contribute inside repository workflows that use Bitbucket.",
+          relatedProjects: [],
+          iconName: "GitPullRequest",
+        },
+        {
+          name: "Jira",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Create stories, coordinate task selection, estimate points and track progress.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "ListChecks",
+        },
+        {
+          name: "Agile workflow",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Support team planning, task ownership discussions and progress visibility.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Workflow",
+        },
+        {
+          name: "Story estimation",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Estimate story points and review those estimates with the Product Owner.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Gauge",
+        },
+        {
+          name: "Docker",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Work with container tooling where it appears in the project workflow.",
+          relatedProjects: [],
+          iconName: "Container",
+        },
+        {
+          name: "Postman",
+          category: "Deliver collaboratively",
+          shortDescription:
+            "Use API tooling to inspect and validate service behavior.",
+          relatedProjects: [],
+          iconName: "Send",
+        },
       ],
     },
     {
-      title: "AI & Machine Learning",
+      title: "Think like a product builder",
+      outcome:
+        "Translate requirements, UX choices and team coordination into clearer product work.",
       capabilities: [
-        "PyTorch",
-        "TensorFlow",
-        "OpenCV",
-        "Grad-CAM",
-      ],
-    },
-    {
-      title: "Tools",
-      capabilities: [
-        "Git",
-        "GitHub",
-        "Bitbucket",
-        "Jira",
-        "Docker",
-        "Azure",
-        "Postman",
+        {
+          name: "Requirements analysis",
+          category: "Think like a product builder",
+          shortDescription:
+            "Understand requirements before shaping stories, scope and implementation.",
+          relatedProjects: [],
+          iconName: "Search",
+        },
+        {
+          name: "UX thinking",
+          category: "Think like a product builder",
+          shortDescription:
+            "Prioritize clarity, purposeful motion and human-centered technology decisions.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "MousePointer2",
+        },
+        {
+          name: "Responsive design",
+          category: "Think like a product builder",
+          shortDescription:
+            "Shape interfaces that stay readable and useful across mobile and desktop layouts.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "Smartphone",
+        },
+        {
+          name: "Accessibility",
+          category: "Think like a product builder",
+          shortDescription:
+            "Use semantic structure, clear labels, focus visibility and reduced-motion support.",
+          relatedProjects: [
+            {
+              label: "Portfolio experience",
+              slug: "portfolio-experience",
+            },
+          ],
+          iconName: "Accessibility",
+        },
+        {
+          name: "Product communication",
+          category: "Think like a product builder",
+          shortDescription:
+            "Balance technical implementation with communication and organization.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "MessagesSquare",
+        },
+        {
+          name: "Task coordination",
+          category: "Think like a product builder",
+          shortDescription:
+            "Coordinate task selection, ownership and progress through team discussions.",
+          relatedProjects: [
+            {
+              label: "Embla Family Treasure",
+              slug: "embla-family-treasure",
+            },
+          ],
+          iconName: "Network",
+        },
       ],
     },
   ],

@@ -105,9 +105,22 @@ export type UxPrinciple = {
   };
 };
 
+export type TechnicalCapability = {
+  name: string;
+  category: string;
+  shortDescription: string;
+  experienceLabel?: string;
+  relatedProjects: {
+    label: string;
+    slug: string;
+  }[];
+  iconName?: string;
+};
+
 export type TechnicalCapabilityGroup = {
   title: string;
-  capabilities: string[];
+  outcome: string;
+  capabilities: TechnicalCapability[];
 };
 
 export type MusicJourney = {
