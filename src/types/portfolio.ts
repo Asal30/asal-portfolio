@@ -30,9 +30,20 @@ export type ProfessionalSummary = {
 
 export type JourneyMilestone = {
   title: string;
-  organization: string;
-  timeframe: string;
-  description: string;
+  period: string;
+  context: string;
+  role: string;
+  shortDescription: string;
+  keyResponsibilities: string[];
+  technologies: string[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  externalLink?: {
+    label: string;
+    href: string;
+  };
 };
 
 export type LeadershipResponsibility = {

@@ -30,25 +30,95 @@ export const portfolioContent: PortfolioContent = {
 
   journeyMilestones: [
     {
-      title: "Software Engineering Intern",
-      organization: "Embla Software Innovation",
-      timeframe: "Jun 2024 – Dec 2025",
-      description:
-        "Developed enterprise SaaS features across Angular, ASP.NET Core and SQL Server while leading the intern team's Agile workflow through Jira management, sprint coordination and feature delivery.",
+      title: "Academic foundation",
+      period: "2022 - 2026",
+      context: "Informatics Institute of Technology",
+      role: "B.Eng. (Hons) Software Engineering",
+      shortDescription:
+        "Built a foundation in software engineering through full-stack development, AI, software architecture and concurrent programming.",
+      keyResponsibilities: ["[CONTENT REQUIRED]"],
+      technologies: [
+        "Full-stack development",
+        "AI",
+        "Software architecture",
+        "Concurrent programming",
+      ],
     },
     {
       title: "IT Support Intern",
-      organization: "Axiata Digital Labs",
-      timeframe: "Jun 2023 – Aug 2023",
-      description:
+      period: "Jun 2023 - Aug 2023",
+      context: "Axiata Digital Labs",
+      role: "IT Support Intern",
+      shortDescription:
         "Provided IT infrastructure, network and end-user support while maintaining operational continuity across the organization.",
+      keyResponsibilities: [
+        "Provided IT infrastructure support",
+        "Provided network support",
+        "Provided end-user support",
+      ],
+      technologies: ["IT infrastructure", "Network support", "End-user support"],
     },
     {
-      title: "B.Eng. (Hons) Software Engineering",
-      organization: "Informatics Institute of Technology",
-      timeframe: "2022 – 2026",
-      description:
-        "Completed Software Engineering degree with a strong focus on full-stack development, AI, software architecture and concurrent programming.",
+      title: "Software engineering internship",
+      period: "Jun 2024 - Dec 2025",
+      context: "Embla Software Innovation",
+      role: "Software Engineering Intern",
+      shortDescription:
+        "Developed enterprise SaaS features across Angular, ASP.NET Core and SQL Server.",
+      keyResponsibilities: [
+        "Developed enterprise SaaS features",
+        "Worked across Angular, ASP.NET Core and SQL Server",
+      ],
+      technologies: ["Angular", "ASP.NET Core", "SQL Server"],
+    },
+    {
+      title: "Team coordination",
+      period: "[CONTENT REQUIRED]",
+      context: "Intern team coordination",
+      role: "Team Coordinator",
+      shortDescription:
+        "Helped coordinate the intern team's Agile workflow through Jira management, sprint discussions, progress tracking and time logging.",
+      keyResponsibilities: [
+        "Created and maintained Jira stories",
+        "Estimated story points and reviewed them with the Product Owner",
+        "Coordinated task selection among interns through team discussions",
+        "Tracked progress and time logging",
+        "Helped coordinate the intern team",
+      ],
+      technologies: ["Jira", "Agile coordination", "Story point estimation"],
+    },
+    {
+      title: "Creative and entrepreneurial work",
+      period: "[CONTENT REQUIRED]",
+      context: "Music and Morpho clothing brand",
+      role: "Creative contributor and entrepreneur",
+      shortDescription:
+        "Built creative range through music and stage performance while growing Morpho, a clothing brand shaped around the slogan Wear Your Memories.",
+      keyResponsibilities: [
+        "Organized rehearsals and performances",
+        "Managed Morpho product planning",
+        "Managed inventory and operations",
+      ],
+      technologies: [
+        "Music performance",
+        "Brand strategy",
+        "Operations",
+        "Inventory management",
+      ],
+      image: {
+        src: "/images/morpho/morpho-product-blue-01.webp",
+        alt: "Morpho clothing product photographed against a blue backdrop",
+      },
+    },
+    {
+      title: "Current career direction",
+      period: "[CONTENT REQUIRED]",
+      context: "Software engineering, product thinking and team coordination",
+      role: "Software Engineer · Product Thinker · Team Coordinator",
+      shortDescription:
+        "Continuing toward opportunities that combine software engineering, product thinking and team coordination.",
+      keyResponsibilities: ["[CONTENT REQUIRED]"],
+      technologies: ["[CONTENT REQUIRED]"],
     },
   ],
 
