@@ -1,6 +1,7 @@
 import { SiteFooter } from "@/src/components/layout/site-footer";
 import { SiteHeader } from "@/src/components/layout/site-header";
 import { CinematicHero } from "@/src/components/sections/cinematic-hero";
+import { ContactClosing } from "@/src/components/sections/contact-closing";
 import { ExpandingIdentity } from "@/src/components/sections/expanding-identity";
 import { LeadershipCoordination } from "@/src/components/sections/leadership-coordination";
 import { ProfessionalJourney } from "@/src/components/sections/professional-journey";
@@ -20,6 +21,7 @@ export default function Home() {
         <SelectedProjects />
         <UxProductPhilosophy />
         <TechnicalCapabilities />
+        <ContactClosing />
       </main>
       <SiteFooter />
     </>

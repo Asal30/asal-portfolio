@@ -146,6 +146,8 @@ export type ContactInformation = {
   phone: string;
   location: string;
   availability: string;
+  closingMessage: string;
+  resumePath: string;
 };
 
 export type PortfolioContent = {

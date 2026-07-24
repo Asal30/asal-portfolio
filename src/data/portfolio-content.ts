@@ -901,5 +901,8 @@ export const portfolioContent: PortfolioContent = {
     phone: "+94 77 642 2399",
     location: "Colombo, Sri Lanka",
     availability: "Open to Software Engineering, Product and Leadership opportunities.",
+    closingMessage:
+      "The next meaningful product might begin with one conversation.",
+    resumePath: "[CONTENT REQUIRED]",
   },
 };
