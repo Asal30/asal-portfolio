@@ -47,7 +47,16 @@ export type JourneyMilestone = {
 };
 
 export type LeadershipResponsibility = {
+  title: string;
   responsibility: string;
+  status: string;
+};
+
+export type LeadershipWorkflowStep = {
+  title: string;
+  description: string;
+  status: string;
+  responsibilities: string[];
 };
 
 export type FeaturedProject = {
@@ -101,6 +110,7 @@ export type PortfolioContent = {
   professionalSummary: ProfessionalSummary;
   journeyMilestones: JourneyMilestone[];
   leadershipResponsibilities: LeadershipResponsibility[];
+  leadershipWorkflow: LeadershipWorkflowStep[];
   featuredProjects: FeaturedProject[];
   uxPrinciples: UxPrinciple[];
   technicalCapabilityGroups: TechnicalCapabilityGroup[];

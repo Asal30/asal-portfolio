@@ -124,21 +124,91 @@ export const portfolioContent: PortfolioContent = {
 
   leadershipResponsibilities: [
     {
-      responsibility: "Created and maintained Jira stories",
+      title: "Story clarity",
+      responsibility: "Created and maintained Jira stories.",
+      status: "Backlog",
     },
     {
+      title: "Estimation",
+      responsibility: "Estimated story points.",
+      status: "Planned",
+    },
+    {
+      title: "Product alignment",
+      responsibility: "Reviewed estimates with the Product Owner.",
+      status: "Planned",
+    },
+    {
+      title: "Task ownership",
       responsibility:
-        "Estimated story points and reviewed them with the Product Owner",
+        "Coordinated task selection among interns through team discussions.",
+      status: "In progress",
     },
     {
+      title: "Progress tracking",
+      responsibility: "Tracked task progress.",
+      status: "In progress",
+    },
+    {
+      title: "Time visibility",
+      responsibility: "Tracked time logging.",
+      status: "Review",
+    },
+    {
+      title: "Team coordination",
+      responsibility: "Helped coordinate the intern team.",
+      status: "Review",
+    },
+    {
+      title: "Delivery balance",
       responsibility:
-        "Coordinated task selection among interns through team discussions",
+        "Balanced technical implementation with communication and organization.",
+      status: "Completed",
+    },
+  ],
+
+  leadershipWorkflow: [
+    {
+      title: "Understand",
+      description: "Understand the requirement before shaping the work.",
+      status: "Backlog",
+      responsibilities: ["Story clarity"],
     },
     {
-      responsibility: "Tracked progress and time logging",
+      title: "Translate",
+      description: "Convert the requirement into clear Jira stories.",
+      status: "Backlog",
+      responsibilities: ["Story clarity"],
     },
     {
-      responsibility: "Helped coordinate the intern team",
+      title: "Estimate",
+      description: "Discuss scope and story point estimates.",
+      status: "Planned",
+      responsibilities: ["Estimation", "Product alignment"],
+    },
+    {
+      title: "Coordinate",
+      description: "Coordinate task ownership through intern team discussions.",
+      status: "In progress",
+      responsibilities: ["Task ownership", "Team coordination"],
+    },
+    {
+      title: "Track",
+      description: "Track progress and time logging as work moves forward.",
+      status: "In progress",
+      responsibilities: ["Progress tracking", "Time visibility"],
+    },
+    {
+      title: "Unblock",
+      description: "Identify blockers through communication and visibility.",
+      status: "Review",
+      responsibilities: ["Team coordination"],
+    },
+    {
+      title: "Support",
+      description: "Support delivery through technical work and organization.",
+      status: "Completed",
+      responsibilities: ["Delivery balance"],
     },
   ],
 
